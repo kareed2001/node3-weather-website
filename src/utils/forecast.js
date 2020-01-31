@@ -13,8 +13,13 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to identify location.  Try another search.', undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + " Currently, it is " + body.currently.temperature  + " degrees. There is a "
-            +     body.currently.precipProbability + "% change of rain. Summary: " + body.currently.summary );
+            console.log(body.daily.data[0], body.currently);
+            callback(undefined, "Currently, it is " + body.currently.temperature  + " degrees and it feels like " 
+                + body.currently.apparentTemperature + " with a high of "
+                + body.daily.data[0].temperatureHigh + " and a low of " + body.daily.data[0].temperatureLow
+                + ". There is a " + body.currently.precipProbability
+                + "% change of rain. Visibility is " + body.currently.visibility 
+                + ". Forecast: " + body.daily.data[0].summary);
         }
 
     });
