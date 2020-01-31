@@ -14,6 +14,7 @@ console.log(__filename);    // current file
 console.log(path.join(__dirname, '../public'))
 
 const app = express();  // create app by call express function
+const port = process.env.PORT || 3000;  // this is only set on Heroku - thus specifies backup/default as the old 3000
 
 const publicDir = path.join(__dirname, '../public');
 const viewsDir = path.join(__dirname, '../templates/views');
@@ -117,6 +118,6 @@ app.get('*', (req, res) => {     //renders handlebar template
 });
 
 // start server - keeps running until we stop it
-app.listen(3000, () => {     // usually dev port, 80 is http port - more later
-    console.log('Server is up on port 3000');
+app.listen(port, () => {     // usually dev port, 80 is http port - more later
+    console.log('Server is up on port ' + port);
 })   

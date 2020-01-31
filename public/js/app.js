@@ -1,3 +1,4 @@
+
 const weatherForm = document.querySelector('form');
 const searchElement = document.querySelector('input');
 const messageOne = document.querySelector('#message-1');
@@ -10,7 +11,8 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...';
     messageTwo.textContent = '';
     
-    fetch('http://localhost:3000/weather?address=' + address).then((response) => {
+    // need to exclude domain in fetch - make it relative
+    fetch('/weather?address=' + address).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 messageOne.textContent = data.error;
