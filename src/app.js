@@ -34,7 +34,7 @@ app.use(express.static(publicDir) )// can customize server
 app.get('', (req, res) => {     //renders handlebar template
     res.render('index', {
         title: 'Weather',
-        name: 'kaya'
+        name: 'kareed'
     })    
 
 });
@@ -42,7 +42,7 @@ app.get('', (req, res) => {     //renders handlebar template
 app.get('/about', (req, res) => {     //renders handlebar template
     res.render('about', {
         title: 'About',
-        name: 'kaya'
+        name: 'kareed'
     })    
 
 });
@@ -50,7 +50,7 @@ app.get('/about', (req, res) => {     //renders handlebar template
 app.get('/help', (req, res) => {     //renders handlebar template
     res.render('help', {
         title: 'Help',
-        name: 'kaya',
+        name: 'kareed',
         message: 'getting help'
     })    
 
@@ -103,7 +103,7 @@ app.get('/help/*', (req, res) => {
     res.render('404', {
         title: 'Help',
         errorMessage: 'Help article not found.',
-        name: 'kaya'
+        name: 'kareed'
     })    
 
 });
@@ -112,7 +112,7 @@ app.get('*', (req, res) => {     //renders handlebar template
     res.render('404', {
         title: '404',
         errorMessage: 'Page not found.',
-        name: 'kaya'
+        name: 'kareed'
     })    
 
 });
